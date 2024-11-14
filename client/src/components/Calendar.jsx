@@ -8,7 +8,7 @@ function Calendar() {
     <div className="calendar">
       <div className="month">Ноябрь 2024</div>
       <div className="days">
-        {days.map(day => (
+        {days.map((day) => (
           <div key={day} className="day">
             {day}
           </div>

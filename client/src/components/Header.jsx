@@ -17,8 +17,10 @@ function Header({ user, handleLogout }) {
         <img src={logo} alt="Логотип" className="logo" />
       </Link>
       <nav className="nav">
-        <Link className='nav-link disabled' to="/">{user ? `Hi, ${user.name}` : 'Guest'}</Link>
-        <Link to="/companions">Попутчики</Link>
+        <Link className="nav-link disabled" to="/">
+          {user ? `Hi, ${user.name}` : 'Guest'}
+        </Link>
+        <Link to="#">Попутчики</Link>
         <Link to="/plan">План</Link>
         {user ? (
           <button onClick={handleLogoutClick} type="button" className="nav-link">

@@ -17,13 +17,14 @@
 
 .map {
   position: relative;
+  height: 800px;
 }
 
 .note {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #c64ac1;
+  background-color: #bd66ff;
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -34,15 +35,17 @@
   font-size: 1.2em;
 }
 
-.popover {
+.popoverr {
   position: absolute;
-  background-color: #fff;
-  padding: 8px;
+  background-color: black;
+  color: white;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 33px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  pointer-events: none;
-  z-index: 10;
+  z-index: 100;
+  bottom: 98%;
+  left: 50%;
 }
 
 path {
@@ -51,5 +54,5 @@ path {
 }
 
 path:hover {
-  fill: #c64ac1;
+  fill: #bd66ff;
 }

@@ -11,18 +11,22 @@ function AdventureSection() {
           <div className="adventure-highlight">приключения</div>
         </h1>
         <div className="image-container">
-          <img src={adventureImg} alt="Иллюстрация приключений" className="adventure-img" />
+          <img
+            src={adventureImg}
+            alt="Иллюстрация приключений"
+            className="adventure-img"
+          />
           <div className="buttons">
             <button>Карта мира</button>
             <button>Форум энтузиастов</button>
             <div className="buttons-bot">
-            <button>Календарь событий</button>
+              <button>Календарь событий</button>
             </div>
           </div>
-          <div className='adventure-text'>
-          Помни: мир полон неизвестного и волнующего. Присоединяйтесь, путешествуйте,
-          открывайте новые горизонты, делитесь впечатлениями!
-        </div>
+          <div className="adventure-text">
+            Помни: мир полон неизвестного и волнующего. Присоединяйтесь, путешествуйте,
+            открывайте новые горизонты, делитесь впечатлениями!
+          </div>
         </div>
       </div>
     </section>

@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
-import Header from './components/Header';
 import AdventureSection from './components/AdventureSection';
 import ExploreSection from './components/ExploreSection';
 import CalendarSection from './components/CalendarSection';
 import SignUpPage from './components/SignUpPage';
 import axiosInstance, { setAccessToken } from '../axiosInstance';
 import LoginPage from './components/LoginPage';
+import PlanPage from './components/PlanPage';
 
 export default function App() {
   const [user, setUser] = useState();
+  const [planCountries, setPlanCountries] = useState([]);
+
+  const addCountryToPlan = (country) => {
+    setPlanCountries((prevPlan) => [...prevPlan, country]);
+  };
 
   useEffect(() => {
     axiosInstance('/tokens/refresh')
@@ -64,7 +69,7 @@ export default function App() {
           element: (
             <>
               <AdventureSection />
-              <ExploreSection />
+              <ExploreSection onAddToPlan={addCountryToPlan} />
               <CalendarSection />
             </>
           ),
@@ -77,13 +82,13 @@ export default function App() {
           path: 'login',
           element: <LoginPage handleLogin={handleLogin} />,
         },
+        {
+          path: 'plan',
+          element: <PlanPage planCountries={planCountries} />,
+        },
       ],
     },
   ];
   const router = createBrowserRouter(routes);
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }

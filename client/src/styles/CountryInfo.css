@@ -1,0 +1,65 @@
+.country-info-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.country-info {
+  background-color: #dfdfdf;
+  padding: 20px;
+  border-radius: 20px;
+  width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.flag-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.country-info p {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.country-info p strong {
+  font-weight: 600;
+}
+
+.add-to-plan-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #bd66ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-plan-btn:hover {
+  background-color: #bd66ff;
+}
