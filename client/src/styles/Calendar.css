@@ -4,26 +4,23 @@
 
 .month {
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 
 .month-title {
   font-family: Century Gothic;
   font-size: 25px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  border-radius: 33px;
   background-color: black;
   color: white;
   padding: 5px;
-  width: 222px;
+  border-radius: 33px;
 }
 
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
+  padding: 20px;
 }
 
 .day {
@@ -31,4 +28,102 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: #f0f0f0;
+}
+
+.event-indicator {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 14px;
+  color: #bd66ff;
+}
+
+.event-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.event-modal input,
+.event-modal textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.event-modal button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #bd66ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.event-list {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.event-day {
+  margin-bottom: 15px;
+}
+
+.event-item {
+  padding: 5px 0;
+}
+
+.event-list {
+  margin-top: 20px;
+}
+
+.event-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.delete-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #ff6666;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #cc3333;
 }
