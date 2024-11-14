@@ -51,9 +51,10 @@
 }
 
 .add-to-plan-btn {
+  display: block;
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #bd66ff;
+  background-color: #343335;
   color: white;
   border: none;
   border-radius: 5px;

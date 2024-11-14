@@ -1,9 +1,15 @@
-.calendar-section {
-  padding: 20px;
-  text-align: center;
-}
-
 .highlight {
   color: #bd66ff;
   font-style: italic;
+  font-family: Denistina;
+  font-size: 100px;
+  transform: rotate(8deg);
+  padding-left: 480px;
+}
+
+.calendar-title {
+  font-family: Denistina;
+  font-size: 100px;
+  transform: rotate(-8deg);
+  height: 50px;
 }

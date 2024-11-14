@@ -8,6 +8,7 @@ function AdventureSection() {
       <div className="container">
         <h1>
           <div className="adventure-highlight-top">Ищущие</div>
+          <div className="highlight-club">клуб</div>
           <div className="adventure-highlight">приключения</div>
         </h1>
         <div className="image-container">
@@ -17,8 +18,26 @@ function AdventureSection() {
             className="adventure-img"
           />
           <div className="buttons">
-            <button>Карта мира</button>
-            <button>Форум энтузиастов</button>
+            <button>
+              <a
+                className="googlemaps"
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Карта мира
+              </a>
+            </button>
+            <button>
+              <a
+                className="googlemaps"
+                href="https://forumplanet.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Форум энтузиастов
+              </a>
+            </button>
             <div className="buttons-bot">
               <button>Календарь событий</button>
             </div>
@@ -28,6 +47,8 @@ function AdventureSection() {
             открывайте новые горизонты, делитесь впечатлениями!
           </div>
         </div>
+        <div className='under-text'>Исследуй</div>
+        <div className='under-text1'>мир с нами</div>
       </div>
     </section>
   );

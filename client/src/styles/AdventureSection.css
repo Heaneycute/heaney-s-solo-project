@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .adventure {
   text-align: center;
   padding: 20px;
@@ -5,27 +7,54 @@
   position: relative;
 }
 
-.adventure h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
+.under-text {
+  color: #bd66ff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  height: 10px;
+  width: 300px;
+  text-wrap: wrap;
+  transform: rotate(-20deg);
+  position: absolute;
+  left: 550px;
+  bottom: 70px;
+}
+
+.under-text1 {
+  color: #bd66ff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  height: 10px;
+  width: 300px;
+  text-wrap: wrap;
+  transform: rotate(-20deg);
+  position: absolute;
+  left: 750px;
+  bottom: 80px;
 }
 
 .adventure-highlight {
-  font-family: IF Kica;
-
+  font-family: 'Montserrat', sans-serif;
   font-size: 100px;
-  font-weight: 400;
-  line-height: 139.2px;
   color: #000000;
   font-style: italic;
 }
 
-.adventure-highlight-top {
-  font-family: IF Kica;
-
+.highlight-club {
+  color: #bd66ff;
+  font-family: 'Montserrat', sans-serif;
   font-size: 100px;
-  font-weight: 400;
-  line-height: 139px;
+  height: 10px;
+  transform: rotate(-30deg);
+  position: absolute;
+  left: 350px;
+  top: 50px;
+}
+
+.adventure-highlight-top {
+  height: 80px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
   color: #000000;
   font-style: italic;
   padding-right: 500px;
@@ -95,4 +124,9 @@
 
 .buttons button:hover {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.googlemaps {
+  color: white;
+  text-decoration: none;
 }

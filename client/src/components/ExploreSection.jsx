@@ -3,11 +3,22 @@ import axios from 'axios';
 import '../styles/ExploreSection.css';
 import CountryInfo from './CountryInfo';
 
-function ExploreSection() {
+function ExploreSection({ setPlan }) {
   const [popoverContent, setPopoverContent] = useState('');
   const [popoverPosition, setPopoverPosition] = useState({ top: 500, left: 500 });
   const [showPopover, setShowPopover] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
+  
+
+ 
+
+  const handleClose = () => {
+    setSelectedCountry(null);
+  };
+
+  const onAddToPlan = (country) => {
+    setPlan((prevPlan) => [...prevPlan, country]);
+  };
 
   const handleMouseEnter = (e) => {
     const title = e.target.getAttribute('title');
@@ -2359,14 +2370,15 @@ function ExploreSection() {
             />
           </g>
         </svg>
-
         {selectedCountry && (
           <CountryInfo
             country={selectedCountry}
             onClose={() => setSelectedCountry(null)}
+            onAddToPlan={onAddToPlan}
           />
         )}
         {showPopover && <div className="popoverr">{popoverContent}</div>}
+        <div className='ex-text'>Здесь все, что нужно взять с собой</div>
       </div>
     </section>
   );

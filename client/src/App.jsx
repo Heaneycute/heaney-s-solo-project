@@ -12,6 +12,7 @@ import PlanPage from './components/PlanPage';
 export default function App() {
   const [user, setUser] = useState();
   const [planCountries, setPlanCountries] = useState([]);
+  const [plan, setPlan] = useState([]);
 
   const addCountryToPlan = (country) => {
     setPlanCountries((prevPlan) => [...prevPlan, country]);
@@ -69,7 +70,7 @@ export default function App() {
           element: (
             <>
               <AdventureSection />
-              <ExploreSection onAddToPlan={addCountryToPlan} />
+              <ExploreSection onAddToPlan={addCountryToPlan}  setPlan={setPlan}/>
               <CalendarSection />
             </>
           ),
@@ -84,7 +85,7 @@ export default function App() {
         },
         {
           path: 'plan',
-          element: <PlanPage planCountries={planCountries} />,
+          element: <PlanPage planCountries={plan} />,
         },
       ],
     },

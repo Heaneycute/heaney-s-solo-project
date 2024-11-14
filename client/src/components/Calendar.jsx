@@ -6,7 +6,7 @@ function Calendar() {
 
   return (
     <div className="calendar">
-      <div className="month">Ноябрь 2024</div>
+      <div className="month"><span className='month-title'>Ноябрь 2024</span></div>
       <div className="days">
         {days.map((day) => (
           <div key={day} className="day">

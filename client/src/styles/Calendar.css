@@ -3,8 +3,21 @@
 }
 
 .month {
-  font-weight: bold;
+  display: flex;
+  justify-content: right;
+}
+
+.month-title {
+  font-family: Century Gothic;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
+  border-radius: 33px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  width: 222px;
 }
 
 .days {

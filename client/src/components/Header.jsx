@@ -18,14 +18,14 @@ function Header({ user, handleLogout }) {
       </Link>
       <nav className="nav">
         <Link className="nav-link disabled" to="/">
-          {user ? `Hi, ${user.name}` : 'Guest'}
+          {user ? `Привет, ${user.name}` : 'Привет, гость!'}
         </Link>
         <Link to="#">Попутчики</Link>
         <Link to="/plan">План</Link>
         {user ? (
-          <button onClick={handleLogoutClick} type="button" className="nav-link">
-            Logout
-          </button>
+          <Link onClick={handleLogoutClick} type="button" className="nav-link">
+            Выйти
+          </Link>
         ) : (
           <>
             <Link to="/login">Вход</Link>
