@@ -1,8 +1,7 @@
-// src/components/Calendar.jsx
 import React, { useState, useEffect } from 'react';
 import '../styles/Calendar.css';
 
-function Calendar() {
+export default function Calendar() {
   const [events, setEvents] = useState({});
   const [selectedDate, setSelectedDate] = useState(null);
   const [eventTitle, setEventTitle] = useState('');
@@ -71,7 +70,7 @@ function Calendar() {
       title: eventTitle,
       description: eventDescription,
     };
-    
+
     setEvents(updatedEvents);
     saveEventsToLocalStorage(updatedEvents);
 
@@ -89,20 +88,20 @@ function Calendar() {
       </div>
       <div className="days">
         {Array.from({ length: 30 }, (_, i) => i + 1).map((day) => (
-          <div
-            key={day}
-            className="day"
-            onClick={() => handleDayClick(day)}
-          >
+          <div key={day} className="day" onClick={() => handleDayClick(day)}>
             {day}
             {events[day] && <div className="event-indicator">•</div>}
           </div>
         ))}
       </div>
 
-      {(selectedDate !== null) && (
+      {selectedDate !== null && (
         <div className="event-modal">
-          <h3>{isEditMode ? 'Редактировать событие' : `Добавить событие на ${selectedDate} ноября`}</h3>
+          <h3>
+            {isEditMode
+              ? 'Редактировать событие'
+              : `Добавить событие на ${selectedDate} ноября`}
+          </h3>
           <input
             type="text"
             placeholder="Название события"
@@ -128,12 +127,24 @@ function Calendar() {
             {Object.entries(events).map(([date, dayEvents]) =>
               dayEvents.map((event, index) => (
                 <div key={`${date}-${index}`} className="event-item">
-                  <span>{date} ноября - {event.title}</span>
+                  <span>
+                    {date} ноября - {event.title}
+                  </span>
                   <p className="event-description">{event.description}</p>
-                  <button onClick={() => handleEditEvent(date, index)} className="edit-btn">Изменить</button>
-                  <button onClick={() => handleDeleteEvent(date, index)} className="delete-btn">Удалить</button>
+                  <button
+                    onClick={() => handleEditEvent(date, index)}
+                    className="edit-btn"
+                  >
+                    Изменить
+                  </button>
+                  <button
+                    onClick={() => handleDeleteEvent(date, index)}
+                    className="delete-btn"
+                  >
+                    Удалить
+                  </button>
                 </div>
-              ))
+              )),
             )}
           </div>
         </div>
@@ -141,6 +152,3 @@ function Calendar() {
     </div>
   );
 }
-
-export default Calendar;
-

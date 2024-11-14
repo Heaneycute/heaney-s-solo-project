@@ -71,7 +71,7 @@ export default function App() {
           element: (
             <>
               <AdventureSection />
-              <ExploreSection onAddToPlan={addCountryToPlan}  setPlan={setPlan}/>
+              <ExploreSection onAddToPlan={addCountryToPlan} setPlan={setPlan} />
               <CalendarSection />
             </>
           ),

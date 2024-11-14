@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/PlanPage.css';
 
-function PlanPage({ planCountries }) {
+export default function PlanPage({ planCountries }) {
   return (
     <div className="plan-page">
       <h2>План путешествий</h2>
@@ -25,5 +25,3 @@ function PlanPage({ planCountries }) {
     </div>
   );
 }
-
-export default PlanPage;

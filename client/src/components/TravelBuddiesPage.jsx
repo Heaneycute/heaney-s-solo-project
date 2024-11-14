@@ -2,7 +2,6 @@ import React from 'react';
 import TravelBuddyCard from './TravelBuddyCard';
 
 export default function TravelBuddiesPage() {
-  // Заглушка данных
   const travelBuddies = [
     { name: 'Анна', country: 'Италия', avatar: 'https://placekitten.com/100/100' },
     { name: 'Максим', country: 'Франция', avatar: 'https://placekitten.com/101/101' },

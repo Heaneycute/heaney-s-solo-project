@@ -2,7 +2,7 @@ import React from 'react';
 import Calendar from './Calendar';
 import '../styles/CalendarSection.css';
 
-function CalendarSection() {
+export default function CalendarSection() {
   return (
     <section className="calendar-section">
       <div className="calendar-title">Календарь</div>
@@ -11,5 +11,3 @@ function CalendarSection() {
     </section>
   );
 }
-
-export default CalendarSection;

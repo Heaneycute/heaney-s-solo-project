@@ -3,7 +3,7 @@ import '../styles/Header.css';
 import logo from '../images/logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Header({ user, handleLogout }) {
+export default function Header({ user, handleLogout }) {
   const navigate = useNavigate();
 
   const handleLogoutClick = async () => {
@@ -36,5 +36,3 @@ function Header({ user, handleLogout }) {
     </header>
   );
 }
-
-export default Header;

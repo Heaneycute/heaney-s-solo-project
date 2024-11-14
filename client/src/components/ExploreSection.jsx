@@ -3,14 +3,11 @@ import axios from 'axios';
 import '../styles/ExploreSection.css';
 import CountryInfo from './CountryInfo';
 
-function ExploreSection({ setPlan }) {
+export default function ExploreSection({ setPlan }) {
   const [popoverContent, setPopoverContent] = useState('');
   const [popoverPosition, setPopoverPosition] = useState({ top: 500, left: 500 });
   const [showPopover, setShowPopover] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
-  
-
- 
 
   const handleClose = () => {
     setSelectedCountry(null);
@@ -2378,10 +2375,8 @@ function ExploreSection({ setPlan }) {
           />
         )}
         {showPopover && <div className="popoverr">{popoverContent}</div>}
-        <div className='ex-text'>Здесь все, что нужно взять с собой</div>
+        <div className="ex-text">Здесь все, что нужно взять с собой</div>
       </div>
     </section>
   );
 }
-
-export default ExploreSection;

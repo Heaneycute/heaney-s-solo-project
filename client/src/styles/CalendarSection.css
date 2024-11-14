@@ -2,7 +2,7 @@
 
 .highlight {
   color: #bd66ff;
-  font-family: "Marck Script", cursive;
+  font-family: 'Marck Script', cursive;
   font-style: italic;
   font-size: 100px;
   transform: rotate(8deg);
@@ -10,7 +10,7 @@
 }
 
 .calendar-title {
-  font-family: "Lobster", sans-serif;
+  font-family: 'Lobster', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 100px;

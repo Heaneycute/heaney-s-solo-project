@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/AdventureSection.css';
 import adventureImg from '../images/adventure-img.jpg';
 
-function AdventureSection() {
+export default function AdventureSection() {
   return (
     <section className="adventure">
       <div className="container">
@@ -47,11 +47,9 @@ function AdventureSection() {
             открывайте новые горизонты, делитесь впечатлениями!
           </div>
         </div>
-        <div className='under-text'>Исследуй</div>
-        <div className='under-text1'>мир с нами</div>
+        <div className="under-text">Исследуй</div>
+        <div className="under-text1">мир с нами</div>
       </div>
     </section>
   );
 }
-
-export default AdventureSection;
