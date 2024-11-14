@@ -1,0 +1,98 @@
+.adventure {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+.adventure h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.adventure-highlight {
+  font-family: IF Kica;
+
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 139.2px;
+  color: #000000;
+  font-style: italic;
+}
+
+.adventure-highlight-top {
+  font-family: IF Kica;
+
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 139px;
+  color: #000000;
+  font-style: italic;
+  padding-right: 500px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.adventure-text {
+  display: flex;
+  align-items: center;
+  font-family: Century Gothic;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36.78px;
+  text-align: left;
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  bottom: -1.5px;
+  left: -1.5px;
+  border-radius: 0px 33px 0px 0px;
+  width: 520px;
+  height: 222px;
+  color: #000000;
+}
+
+.adventure-img {
+  filter: blur(1.3px) brightness(70%);
+  width: 1292px;
+  height: 612px;
+  border-radius: 33px;
+}
+
+.buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons-bot {
+  position: absolute;
+  top: 100px;
+  right: 5px;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  font-family: Century Gothic;
+  font-size: 30px;
+  line-height: 60px;
+  width: 549px;
+  height: 79px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border: 2px solid white;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}

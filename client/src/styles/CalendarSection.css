@@ -1,0 +1,9 @@
+.calendar-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.highlight {
+  color: #c64ac1;
+  font-style: italic;
+}
