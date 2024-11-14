@@ -6,7 +6,9 @@
 }
 
 .what {
-  font-family: IF Kica;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
   font-size: 100px;
   font-weight: 400;
@@ -62,11 +64,12 @@ path:hover {
   right: 260px;
   bottom: 100px;
   text-align: left;
-  width: 270px;
+  width: 260px;
   height: 30px;
   text-wrap: wrap;
   color: #bd66ff;
   font-style: italic;
-  font-family: Denistina;
+  font-family: "Marck Script", cursive;
+  font-style: normal;
   font-size: 30px;
 }
