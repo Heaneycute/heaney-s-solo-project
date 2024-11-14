@@ -107,21 +107,41 @@
 
 .event-item {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 10px;
   background-color: #e0e0e0;
   border-radius: 8px;
   white-space: nowrap;
 }
 
+.event-description {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.edit-btn,
 .delete-btn {
-  margin-left: 10px;
+  margin-top: 5px;
   padding: 5px 10px;
-  background-color: #bd66ff;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #bd66ff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #bd66ff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
 }
 
 .delete-btn:hover {

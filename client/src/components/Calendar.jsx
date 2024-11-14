@@ -1,11 +1,14 @@
+// src/components/Calendar.jsx
 import React, { useState, useEffect } from 'react';
 import '../styles/Calendar.css';
 
-export default function Calendar() {
+function Calendar() {
   const [events, setEvents] = useState({});
   const [selectedDate, setSelectedDate] = useState(null);
   const [eventTitle, setEventTitle] = useState('');
   const [eventDescription, setEventDescription] = useState('');
+  const [editEventIndex, setEditEventIndex] = useState(null);
+  const [isEditMode, setIsEditMode] = useState(false);
 
   useEffect(() => {
     const savedEvents = localStorage.getItem('calendarEvents');
@@ -20,11 +23,14 @@ export default function Calendar() {
 
   const handleDayClick = (day) => {
     setSelectedDate(day);
+    setIsEditMode(false);
+    setEventTitle('');
+    setEventDescription('');
   };
 
   const handleAddEvent = () => {
     if (!eventTitle) return;
-    
+
     const updatedEvents = {
       ...events,
       [selectedDate]: [
@@ -32,7 +38,7 @@ export default function Calendar() {
         { title: eventTitle, description: eventDescription },
       ],
     };
-    
+
     setEvents(updatedEvents);
     saveEventsToLocalStorage(updatedEvents);
 
@@ -49,6 +55,31 @@ export default function Calendar() {
     }
     setEvents(updatedEvents);
     saveEventsToLocalStorage(updatedEvents);
+  };
+
+  const handleEditEvent = (day, index) => {
+    setSelectedDate(day);
+    setEventTitle(events[day][index].title);
+    setEventDescription(events[day][index].description);
+    setEditEventIndex(index);
+    setIsEditMode(true);
+  };
+
+  const handleSaveEditEvent = () => {
+    const updatedEvents = { ...events };
+    updatedEvents[selectedDate][editEventIndex] = {
+      title: eventTitle,
+      description: eventDescription,
+    };
+    
+    setEvents(updatedEvents);
+    saveEventsToLocalStorage(updatedEvents);
+
+    setEventTitle('');
+    setEventDescription('');
+    setEditEventIndex(null);
+    setIsEditMode(false);
+    setSelectedDate(null);
   };
 
   return (
@@ -69,9 +100,9 @@ export default function Calendar() {
         ))}
       </div>
 
-      {selectedDate && (
+      {(selectedDate !== null) && (
         <div className="event-modal">
-          <h3>Добавить событие на {selectedDate} ноября</h3>
+          <h3>{isEditMode ? 'Редактировать событие' : `Добавить событие на ${selectedDate} ноября`}</h3>
           <input
             type="text"
             placeholder="Название события"
@@ -83,7 +114,9 @@ export default function Calendar() {
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
           />
-          <button onClick={handleAddEvent}>Добавить событие</button>
+          <button onClick={isEditMode ? handleSaveEditEvent : handleAddEvent}>
+            {isEditMode ? 'Сохранить изменения' : 'Добавить событие'}
+          </button>
           <button onClick={() => setSelectedDate(null)}>Отмена</button>
         </div>
       )}
@@ -96,9 +129,9 @@ export default function Calendar() {
               dayEvents.map((event, index) => (
                 <div key={`${date}-${index}`} className="event-item">
                   <span>{date} ноября - {event.title}</span>
-                  <button onClick={() => handleDeleteEvent(date, index)} className="delete-btn">
-                    Удалить
-                  </button>
+                  <p className="event-description">{event.description}</p>
+                  <button onClick={() => handleEditEvent(date, index)} className="edit-btn">Изменить</button>
+                  <button onClick={() => handleDeleteEvent(date, index)} className="delete-btn">Удалить</button>
                 </div>
               ))
             )}
@@ -108,3 +141,6 @@ export default function Calendar() {
     </div>
   );
 }
+
+export default Calendar;
+
