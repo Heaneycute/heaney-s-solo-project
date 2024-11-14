@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'IFKica';
+  src: url('./fonts/IFKica-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'denistina';
+  src: url('./fonts/denistina_en.ttf') format('truetype');
+}
+
 
 .adventure {
   text-align: center;
@@ -9,7 +18,7 @@
 
 .under-text {
   color: #bd66ff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'denistina', sans-serif;
   font-size: 50px;
   height: 10px;
   width: 300px;
@@ -22,7 +31,7 @@
 
 .under-text1 {
   color: #bd66ff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'denistina', sans-serif;
   font-size: 50px;
   height: 10px;
   width: 300px;
@@ -34,7 +43,7 @@
 }
 
 .adventure-highlight {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'IFKica', sans-serif;
   font-size: 100px;
   color: #000000;
   font-style: italic;
@@ -42,7 +51,7 @@
 
 .highlight-club {
   color: #bd66ff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'denistina', sans-serif;
   font-size: 100px;
   height: 10px;
   transform: rotate(-30deg);
@@ -53,7 +62,7 @@
 
 .adventure-highlight-top {
   height: 80px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'IFKica', sans-serif;
   font-size: 100px;
   color: #000000;
   font-style: italic;

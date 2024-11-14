@@ -20,7 +20,7 @@ function Header({ user, handleLogout }) {
         <Link className="nav-link disabled" to="/">
           {user ? `Привет, ${user.name}` : 'Привет, гость!'}
         </Link>
-        <Link to="#">Попутчики</Link>
+        <Link to="/travel-buddies">Попутчики</Link>
         <Link to="/plan">План</Link>
         {user ? (
           <Link onClick={handleLogoutClick} type="button" className="nav-link">

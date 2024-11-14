@@ -8,6 +8,7 @@ import SignUpPage from './components/SignUpPage';
 import axiosInstance, { setAccessToken } from '../axiosInstance';
 import LoginPage from './components/LoginPage';
 import PlanPage from './components/PlanPage';
+import TravelBuddiesPage from './components/TravelBuddiesPage';
 
 export default function App() {
   const [user, setUser] = useState();
@@ -86,6 +87,10 @@ export default function App() {
         {
           path: 'plan',
           element: <PlanPage planCountries={plan} />,
+        },
+        {
+          path: 'travel-buddies',
+          element: <TravelBuddiesPage />,
         },
       ],
     },
