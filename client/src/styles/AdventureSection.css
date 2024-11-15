@@ -11,37 +11,38 @@
   color: #bd66ff;
   font-family: 'Marck Script', cursive;
   font-style: normal;
-  font-size: 50px;
+  font-size: 100px;
   height: 10px;
   width: 300px;
   text-wrap: wrap;
   transform: rotate(-20deg);
   position: absolute;
-  left: 550px;
-  bottom: 70px;
+  left: 520px;
+  bottom: 100px;
+  z-index: 15;
 }
 
 .under-text1 {
   color: #bd66ff;
   font-family: 'Marck Script', cursive;
   font-style: normal;
-  font-size: 50px;
+  font-size: 100px;
   height: 10px;
-  width: 300px;
+  width: 700px;
   text-wrap: wrap;
   transform: rotate(-20deg);
   position: absolute;
-  left: 750px;
-  bottom: 80px;
+  left: 700px;
+  bottom: 140px;
 }
 
 .adventure-highlight {
-  font-family: 'Lobster', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 100px;
   color: #000000;
-  font-style: italic;
+  padding-left: 450px;
 }
 
 .highlight-club {
@@ -52,19 +53,18 @@
   height: 10px;
   transform: rotate(-30deg);
   position: absolute;
-  left: 350px;
+  left: 400px;
   top: 50px;
 }
 
 .adventure-highlight-top {
   height: 80px;
-  font-family: 'Lobster', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 100px;
   color: #000000;
-  font-style: italic;
-  padding-right: 500px;
+  padding-right: 800px;
 }
 
 .image-container {
@@ -83,16 +83,17 @@
   position: absolute;
   z-index: 10;
   background-color: white;
-  bottom: -1.5px;
-  left: -1.5px;
+  bottom: -5.5px;
+  left: -4.5px;
   border-radius: 0px 33px 0px 0px;
-  width: 520px;
-  height: 222px;
+  width: 540px;
+  height: 244px;
   color: #000000;
+  text-wrap: wrap;
 }
 
 .adventure-img {
-  filter: blur(1.3px) brightness(70%);
+  filter: blur(3px) brightness(60%);
   width: 1292px;
   height: 612px;
   border-radius: 33px;

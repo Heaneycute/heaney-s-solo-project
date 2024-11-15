@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Calendar.css';
 
-export default function Calendar() {
+export default function Calendar({ onAddEvent }) {
   const [events, setEvents] = useState({});
   const [selectedDate, setSelectedDate] = useState(null);
   const [eventTitle, setEventTitle] = useState('');
   const [eventDescription, setEventDescription] = useState('');
   const [editEventIndex, setEditEventIndex] = useState(null);
-  const [isEditMode, setIsEditMode] = useState(false);
 
   useEffect(() => {
     const savedEvents = localStorage.getItem('calendarEvents');
@@ -22,28 +21,28 @@ export default function Calendar() {
 
   const handleDayClick = (day) => {
     setSelectedDate(day);
-    setIsEditMode(false);
     setEventTitle('');
     setEventDescription('');
+    setEditEventIndex(null);
   };
 
-  const handleAddEvent = () => {
+  const handleSaveEvent = () => {
     if (!eventTitle) return;
 
-    const updatedEvents = {
-      ...events,
-      [selectedDate]: [
-        ...(events[selectedDate] || []),
-        { title: eventTitle, description: eventDescription },
-      ],
-    };
+    const updatedEvents = { ...events };
+    const newEvent = { title: eventTitle, description: eventDescription };
+
+    if (editEventIndex !== null) {
+      updatedEvents[selectedDate][editEventIndex] = newEvent; // Обновляем существующее событие
+      onAddEvent('edit');
+    } else {
+      updatedEvents[selectedDate] = [...(updatedEvents[selectedDate] || []), newEvent]; // Добавляем новое событие
+      onAddEvent('add');
+    }
 
     setEvents(updatedEvents);
     saveEventsToLocalStorage(updatedEvents);
-
-    setEventTitle('');
-    setEventDescription('');
-    setSelectedDate(null);
+    resetModal();
   };
 
   const handleDeleteEvent = (day, index) => {
@@ -54,31 +53,23 @@ export default function Calendar() {
     }
     setEvents(updatedEvents);
     saveEventsToLocalStorage(updatedEvents);
+
+    onAddEvent('delete');
   };
 
   const handleEditEvent = (day, index) => {
+    const event = events[day][index];
     setSelectedDate(day);
-    setEventTitle(events[day][index].title);
-    setEventDescription(events[day][index].description);
+    setEventTitle(event.title);
+    setEventDescription(event.description);
     setEditEventIndex(index);
-    setIsEditMode(true);
   };
 
-  const handleSaveEditEvent = () => {
-    const updatedEvents = { ...events };
-    updatedEvents[selectedDate][editEventIndex] = {
-      title: eventTitle,
-      description: eventDescription,
-    };
-
-    setEvents(updatedEvents);
-    saveEventsToLocalStorage(updatedEvents);
-
+  const resetModal = () => {
     setEventTitle('');
     setEventDescription('');
-    setEditEventIndex(null);
-    setIsEditMode(false);
     setSelectedDate(null);
+    setEditEventIndex(null);
   };
 
   return (
@@ -94,14 +85,9 @@ export default function Calendar() {
           </div>
         ))}
       </div>
-
       {selectedDate !== null && (
         <div className="event-modal">
-          <h3>
-            {isEditMode
-              ? 'Редактировать событие'
-              : `Добавить событие на ${selectedDate} ноября`}
-          </h3>
+          <h3>{editEventIndex !== null ? 'Редактировать событие' : `Добавить событие на ${selectedDate} ноября`}</h3>
           <input
             type="text"
             placeholder="Название события"
@@ -113,13 +99,12 @@ export default function Calendar() {
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
           />
-          <button onClick={isEditMode ? handleSaveEditEvent : handleAddEvent}>
-            {isEditMode ? 'Сохранить изменения' : 'Добавить событие'}
+          <button onClick={handleSaveEvent}>
+            {editEventIndex !== null ? 'Сохранить изменения' : 'Добавить событие'}
           </button>
-          <button onClick={() => setSelectedDate(null)}>Отмена</button>
+          <button onClick={resetModal}>Отмена</button>
         </div>
       )}
-
       {Object.keys(events).length > 0 && (
         <div className="event-list">
           <h3>События</h3>
@@ -131,20 +116,14 @@ export default function Calendar() {
                     {date} ноября - {event.title}
                   </span>
                   <p className="event-description">{event.description}</p>
-                  <button
-                    onClick={() => handleEditEvent(date, index)}
-                    className="edit-btn"
-                  >
+                  <button onClick={() => handleEditEvent(date, index)} className="edit-btn">
                     Изменить
                   </button>
-                  <button
-                    onClick={() => handleDeleteEvent(date, index)}
-                    className="delete-btn"
-                  >
+                  <button onClick={() => handleDeleteEvent(date, index)} className="delete-btn">
                     Удалить
                   </button>
                 </div>
-              )),
+              ))
             )}
           </div>
         </div>

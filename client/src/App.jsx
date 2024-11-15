@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Layout from './components/Layout';
 import AdventureSection from './components/AdventureSection';
 import ExploreSection from './components/ExploreSection';
@@ -96,5 +98,10 @@ export default function App() {
     },
   ];
   const router = createBrowserRouter(routes);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+    </>
+  );
 }

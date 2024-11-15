@@ -1,0 +1,11 @@
+.travel-buddies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .travel-buddies-list > div {
+    width: calc(50% - 30px); /* Ширина с учетом отступов */
+    margin: 10px 15px; /* Отступы между карточками */
+  }
+  

@@ -4,16 +4,17 @@
   color: #bd66ff;
   font-family: 'Marck Script', cursive;
   font-style: italic;
-  font-size: 100px;
+  font-size: 170px;
   transform: rotate(8deg);
-  padding-left: 480px;
+  padding-left: 680px;
 }
 
 .calendar-title {
-  font-family: 'Lobster', sans-serif;
+  color: black;
+  font-family: "Unbounded", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 100px;
   transform: rotate(-8deg);
-  height: 50px;
+  height: 0;
 }
