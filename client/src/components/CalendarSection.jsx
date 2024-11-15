@@ -8,11 +8,11 @@ export default function CalendarSection() {
 
   const handleEventAction = (actionType) => {
     if (actionType === 'add') {
-      toast.success("Событие успешно добавлено!");
+      toast.success('Событие успешно добавлено!');
     } else if (actionType === 'edit') {
-      toast.success("Событие успешно изменено!");
+      toast.success('Событие успешно изменено!');
     } else if (actionType === 'delete') {
-      toast.success("Событие успешно удалено!");
+      toast.success('Событие успешно удалено!');
     }
   };
 

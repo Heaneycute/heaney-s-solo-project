@@ -33,10 +33,10 @@ export default function Calendar({ onAddEvent }) {
     const newEvent = { title: eventTitle, description: eventDescription };
 
     if (editEventIndex !== null) {
-      updatedEvents[selectedDate][editEventIndex] = newEvent; // Обновляем существующее событие
+      updatedEvents[selectedDate][editEventIndex] = newEvent;
       onAddEvent('edit');
     } else {
-      updatedEvents[selectedDate] = [...(updatedEvents[selectedDate] || []), newEvent]; // Добавляем новое событие
+      updatedEvents[selectedDate] = [...(updatedEvents[selectedDate] || []), newEvent];
       onAddEvent('add');
     }
 
@@ -87,7 +87,11 @@ export default function Calendar({ onAddEvent }) {
       </div>
       {selectedDate !== null && (
         <div className="event-modal">
-          <h3>{editEventIndex !== null ? 'Редактировать событие' : `Добавить событие на ${selectedDate} ноября`}</h3>
+          <h3>
+            {editEventIndex !== null
+              ? 'Редактировать событие'
+              : `Добавить событие на ${selectedDate} ноября`}
+          </h3>
           <input
             type="text"
             placeholder="Название события"
@@ -116,14 +120,20 @@ export default function Calendar({ onAddEvent }) {
                     {date} ноября - {event.title}
                   </span>
                   <p className="event-description">{event.description}</p>
-                  <button onClick={() => handleEditEvent(date, index)} className="edit-btn">
+                  <button
+                    onClick={() => handleEditEvent(date, index)}
+                    className="edit-btn"
+                  >
                     Изменить
                   </button>
-                  <button onClick={() => handleDeleteEvent(date, index)} className="delete-btn">
+                  <button
+                    onClick={() => handleDeleteEvent(date, index)}
+                    className="delete-btn"
+                  >
                     Удалить
                   </button>
                 </div>
-              ))
+              )),
             )}
           </div>
         </div>
